@@ -1,3 +1,7 @@
+#My Observations
+
+
+
 # Purplebricks Developer Test
 
 The aim of this test is to give us an idea about how you approach the development and maintenance of web applications. You will work from a GitHub repository which contains an existing web application. The UI should be functional, but there is no expectation that you modify the brand theme. We are looking for a solution that shows how you build maintainable, scalable and secure software. The test is based on an overly simplified version of our business domain.
