@@ -9,7 +9,9 @@ My thoughts on scaling and making the app more responsive -
 4. The View Models are good in that they are closely placed by their respective controllers.
 5. We could add more levels of security by creating an Identity Server that performs the tasks of Authenticating incoming user requests from all applications in the organization.
 6. We could also give a response based model in the application where the user is notified of the result of the action he performed, which in the current case is not implemented.
-7. 
+
+7. BuyerId was missing in the Offers table, so I have added it there.
+8. Viewing requests has been added as a new feature in the application.
 
 
 # Purplebricks Developer Test
