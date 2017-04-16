@@ -26,6 +26,7 @@ namespace OrangeBricks.Web.Controllers.Viewings
             return View(viewModel);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Accept(AcceptViewingRequestCommand command)
         {
             var handler = new AcceptViewingRequestCommandHandler(_context);
@@ -36,6 +37,7 @@ namespace OrangeBricks.Web.Controllers.Viewings
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Reject(RejectViewingRequestCommand command)
         {
             var handler = new RejectViewingRequestCommandHandler(_context);

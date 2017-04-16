@@ -30,6 +30,8 @@
         {
             using (Html.BeginForm("Accept", "Offers"))
             {
+                @Html.AntiForgeryToken()
+
                 @Html.Hidden("PropertyId", Model.PropertyId)
                 @Html.Hidden("OfferId", offer.Id)
                 <p>

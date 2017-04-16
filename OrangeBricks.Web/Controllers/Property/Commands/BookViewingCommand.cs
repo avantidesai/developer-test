@@ -9,8 +9,7 @@ namespace OrangeBricks.Web.Controllers.Property.Commands
     {
         public int PropertyId { get; set; }
         public DateTime ViewingDate { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+       
         public string ViewingUserId { get; set; }
     }
 }

@@ -14,8 +14,7 @@ namespace OrangeBricks.Web.Controllers.Property.ViewModels
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd hh:mm}", ApplyFormatInEditMode = true)]
         public DateTime ViewingDate { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+  
         public int PropertyId { get; set; }
         public string ViewingUserId { get; set; }
 

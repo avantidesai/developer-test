@@ -22,7 +22,6 @@ namespace OrangeBricks.Web.Controllers.Property.ViewModels
         public string Status { get; set; }
 
         public DateTime ViewingDate { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+      
     }
 }

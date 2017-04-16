@@ -33,8 +33,6 @@ namespace OrangeBricks.Web.Controllers.Viewings.Builders
                 {
                     Id = x.Id,
                     ViewingDate = x.ViewingDate,
-                    StartTime = x.StartTime,
-                    EndTime = x.EndTime,
                     IsPending = x.Status == Status.Pending,
                     Status = x.Status.ToString()
                 }),

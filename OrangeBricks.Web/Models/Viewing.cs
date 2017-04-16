@@ -8,11 +8,10 @@ namespace OrangeBricks.Web.Models
         [Key]
         public int Id { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime ViewingDate { get; set; }
 
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+       
         public Status Status { get; set; }      
         public string ViewingRequestedBy { get; set; }
     }

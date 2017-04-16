@@ -29,9 +29,7 @@ namespace OrangeBricks.Web.Controllers.Property.Builders
                         StreetName = p.StreetName,
                         PropertyId = p.Id,
                         Status = v.Status.ToString(),
-                        ViewingDate = v.ViewingDate,
-                        StartTime = v.StartTime,
-                        EndTime    = v.EndTime
+                        ViewingDate = v.ViewingDate
                     };
 
             return new MyViewingsViewModel()

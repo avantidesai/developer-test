@@ -1,5 +1,6 @@
 ﻿using OrangeBricks.Web.Models;
 using System.Collections.Generic;
+using System;
 
 namespace OrangeBricks.Web.Controllers.Property.Commands
 {
@@ -20,8 +21,6 @@ namespace OrangeBricks.Web.Controllers.Property.Commands
             {
                 Status = Status.Pending,
                ViewingDate = command.ViewingDate,
-               StartTime = command.StartTime,
-               EndTime = command.EndTime,
                ViewingRequestedBy = command.ViewingUserId              
             };
 

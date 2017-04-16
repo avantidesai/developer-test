@@ -30,7 +30,9 @@
         if (viewing.IsPending)
         {
             using (Html.BeginForm("Accept", "Viewings"))
-            {
+            {    
+                @Html.AntiForgeryToken()
+
                 @Html.Hidden("PropertyId", Model.PropertyId)
                 @Html.Hidden("ViewingId", viewing.Id)
                 <p>
