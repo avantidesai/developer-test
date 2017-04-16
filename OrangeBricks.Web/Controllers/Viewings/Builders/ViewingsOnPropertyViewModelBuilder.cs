@@ -32,7 +32,9 @@ namespace OrangeBricks.Web.Controllers.Viewings.Builders
                 Viewings = viewings.Select(x => new ViewingViewModel
                 {
                     Id = x.Id,
-                    ViewingDateTime = x.ViewingDateTime,
+                    ViewingDate = x.ViewingDate,
+                    StartTime = x.StartTime,
+                    EndTime = x.EndTime,
                     IsPending = x.Status == Status.Pending,
                     Status = x.Status.ToString()
                 }),

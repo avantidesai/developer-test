@@ -17,7 +17,9 @@ namespace OrangeBricks.Web.Controllers.Viewings.ViewModels
     public class ViewingViewModel
     {
         public int Id;
-        public DateTime ViewingDateTime { get; set; }
+        public DateTime ViewingDate { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool IsPending { get; set; }
         public string Status { get; set; }
