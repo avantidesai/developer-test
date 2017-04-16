@@ -1,3 +1,19 @@
+#My Observations
+
+The code has a very simplistic architecture. It has essentially separated all features and actions from one another thus giving way to a loosely coupled code. Although I found that we could minimize the Commands and Command Builders to save from repetition, I also thought that this allows for perfect separation of every action. 
+
+My thoughts on scaling and making the app more responsive - 
+1. We could make use of asynchronous request response architecture that allows applications to be more reactive and responsive. 
+2. We could create an API project that serves as a one stop shop for all access to database and its services, this makes the application and codebase more secure and also allows all applications to use the same set of RESTful APIs.
+3. We could make use of AutoMapper that easily transforms the data models to its respective DTOs, thus securing data even further by one level.
+4. The View Models are good in that they are closely placed by their respective controllers.
+5. We could add more levels of security by creating an Identity Server that performs the tasks of Authenticating incoming user requests from all applications in the organization.
+6. We could also give a response based model in the application where the user is notified of the result of the action he performed, which in the current case is not implemented.
+
+7. BuyerId was missing in the Offers table, so I have added it there.
+8. Viewing requests has been added as a new feature in the application.
+
+
 # Purplebricks Developer Test
 
 The aim of this test is to give us an idea about how you approach the development and maintenance of web applications. You will work from a GitHub repository which contains an existing web application. The UI should be functional, but there is no expectation that you modify the brand theme. We are looking for a solution that shows how you build maintainable, scalable and secure software. The test is based on an overly simplified version of our business domain.
