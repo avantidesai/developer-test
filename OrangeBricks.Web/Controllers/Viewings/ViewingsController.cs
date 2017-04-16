@@ -21,30 +21,52 @@ namespace OrangeBricks.Web.Controllers.Viewings
         }
         public ActionResult OnProperty(int id)
         {
-            var builder = new ViewingsOnPropertyViewModelBuilder(_context);
-            var viewModel = builder.Build(id);
-            return View(viewModel);
+            try
+            {
+                var builder = new ViewingsOnPropertyViewModelBuilder(_context);
+                var viewModel = builder.Build(id);
+                return View(viewModel);
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Accept(AcceptViewingRequestCommand command)
         {
-            var handler = new AcceptViewingRequestCommandHandler(_context);
+            try
+            {
+                var handler = new AcceptViewingRequestCommandHandler(_context);
 
-            handler.Handle(command);
+                handler.Handle(command);
 
-            return RedirectToAction("OnProperty", new { id = command.PropertyId });
+                return RedirectToAction("OnProperty", new { id = command.PropertyId });
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Reject(RejectViewingRequestCommand command)
         {
-            var handler = new RejectViewingRequestCommandHandler(_context);
+            try
+            {
+                var handler = new RejectViewingRequestCommandHandler(_context);
 
-            handler.Handle(command);
+                handler.Handle(command);
 
-            return RedirectToAction("OnProperty", new { id = command.PropertyId });
+                return RedirectToAction("OnProperty", new { id = command.PropertyId });
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
     }
 }

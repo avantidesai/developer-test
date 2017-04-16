@@ -18,32 +18,48 @@ namespace OrangeBricks.Web.Controllers.Offers
 
         public ActionResult OnProperty(int id)
         {
+            try { 
             var builder = new OffersOnPropertyViewModelBuilder(_context);
             var viewModel = builder.Build(id);
 
             return View(viewModel);
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Accept(AcceptOfferCommand command)
         {
-            var handler = new AcceptOfferCommandHandler(_context);
-
-            handler.Handle(command);
-
-            return RedirectToAction("OnProperty", new { id = command.PropertyId });
+            try
+            {
+                var handler = new AcceptOfferCommandHandler(_context);
+                handler.Handle(command);
+                return RedirectToAction("OnProperty", new { id = command.PropertyId });
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Reject(RejectOfferCommand command)
         {
-            var handler = new RejectOfferCommandHandler(_context);
-
-            handler.Handle(command);
-
-            return RedirectToAction("OnProperty", new { id = command.PropertyId });
+            try
+            {
+                var handler = new RejectOfferCommandHandler(_context);
+                handler.Handle(command);
+                return RedirectToAction("OnProperty", new { id = command.PropertyId });
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
     }
 }

@@ -78,9 +78,16 @@ namespace OrangeBricks.Web.Controllers.Property
         [OrangeBricksAuthorize(Roles = "Buyer")]
         public ActionResult MakeOffer(int id)
         {
-            var builder = new MakeOfferViewModelBuilder(_context);
-            var viewModel = builder.Build(id, User.Identity.GetUserId());
-            return View(viewModel);
+            try
+            {
+                var builder = new MakeOfferViewModelBuilder(_context);
+                var viewModel = builder.Build(id, User.Identity.GetUserId());
+                return View(viewModel);
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         [HttpPost]
@@ -88,27 +95,48 @@ namespace OrangeBricks.Web.Controllers.Property
         [OrangeBricksAuthorize(Roles = "Buyer")]
         public ActionResult MakeOffer(MakeOfferCommand command)
         {
-            var handler = new MakeOfferCommandHandler(_context);
+            try
+            {
+                var handler = new MakeOfferCommandHandler(_context);
 
-            handler.Handle(command);
+                handler.Handle(command);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
         [OrangeBricksAuthorize(Roles = "Buyer")]
         public ActionResult MyOffers()
         {
-            var builder = new MyOffersViewModelBuilder(_context);
-            var viewModel = builder.Build(User.Identity.GetUserId());
+            try
+            {
+                var builder = new MyOffersViewModelBuilder(_context);
+                var viewModel = builder.Build(User.Identity.GetUserId());
 
-            return View(viewModel);
+                return View(viewModel);
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         [OrangeBricksAuthorize(Roles = "Buyer")]
         public ActionResult BookViewing(int id)
         {
-            var builder = new BookViewingViewModelBuilder(_context);
-            var viewModel = builder.Build(id, User.Identity.GetUserId());
-            return View(viewModel);
+            try
+            {
+                var builder = new BookViewingViewModelBuilder(_context);
+                var viewModel = builder.Build(id, User.Identity.GetUserId());
+                return View(viewModel);
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         [HttpPost]
@@ -116,19 +144,31 @@ namespace OrangeBricks.Web.Controllers.Property
         [OrangeBricksAuthorize(Roles = "Buyer")]
         public ActionResult BookViewing(BookViewingCommand command)
         {
-            var handler = new BookViewingCommandHandler(_context);
-
-            handler.Handle(command);
-
-            return RedirectToAction("Index");
+            try
+            {
+                var handler = new BookViewingCommandHandler(_context);
+                handler.Handle(command);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         [OrangeBricksAuthorize(Roles = "Buyer")]
         public ActionResult MyViewings()
         {
-            var builder = new MyViewingsViewModelBuilder(_context);
-            var viewModel = builder.Build(User.Identity.GetUserId());
-            return View(viewModel);
+            try
+            {
+                var builder = new MyViewingsViewModelBuilder(_context);
+                var viewModel = builder.Build(User.Identity.GetUserId());
+                return View(viewModel);
+            }
+            catch
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
     }
 }
