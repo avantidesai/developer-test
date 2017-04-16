@@ -25,6 +25,12 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Properties", "Index", "Property")</li>
+                        if (User.IsInRole("Buyer"))
+                        {
+                            <li>@Html.ActionLink("My Offers", "MyOffers", "Property")</li>
+                            <li>@Html.ActionLink("My Viewings", "MyViewings", "Property")</li>
+
+                        }
                         if (User.IsInRole("Seller"))
                         {
                             <li>@Html.ActionLink("Create Listing", "Create", "Property")</li>

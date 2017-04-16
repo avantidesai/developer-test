@@ -77,7 +77,7 @@ namespace OrangeBricks.Web.Controllers.Property
         public ActionResult MakeOffer(int id)
         {
             var builder = new MakeOfferViewModelBuilder(_context);
-            var viewModel = builder.Build(id);
+            var viewModel = builder.Build(id, User.Identity.GetUserId());
             return View(viewModel);
         }
 
@@ -90,6 +90,41 @@ namespace OrangeBricks.Web.Controllers.Property
             handler.Handle(command);
 
             return RedirectToAction("Index");
+        }
+        [OrangeBricksAuthorize(Roles = "Buyer")]
+        public ActionResult MyOffers()
+        {
+            var builder = new MyOffersViewModelBuilder(_context);
+            var viewModel = builder.Build(User.Identity.GetUserId());
+
+            return View(viewModel);
+        }
+
+        [OrangeBricksAuthorize(Roles = "Buyer")]
+        public ActionResult BookViewing(int id)
+        {
+            var builder = new BookViewingViewModelBuilder(_context);
+            var viewModel = builder.Build(id, User.Identity.GetUserId());
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [OrangeBricksAuthorize(Roles = "Buyer")]
+        public ActionResult BookViewing(BookViewingCommand command)
+        {
+            var handler = new BookViewingCommandHandler(_context);
+
+            handler.Handle(command);
+
+            return RedirectToAction("Index");
+        }
+
+        [OrangeBricksAuthorize(Roles = "Buyer")]
+        public ActionResult MyViewings()
+        {
+            var builder = new MyViewingsViewModelBuilder(_context);
+            var viewModel = builder.Build(User.Identity.GetUserId());
+            return View(viewModel);
         }
     }
 }

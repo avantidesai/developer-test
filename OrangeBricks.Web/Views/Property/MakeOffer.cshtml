@@ -15,6 +15,7 @@
         @Html.LabelFor(m => m.Offer, "Offer in GBP", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.Hidden("PropertyId", Model.PropertyId)
+            @Html.Hidden("OfferUserId",Model.OfferUserId)
             @Html.TextBoxFor(m => m.Offer, new {@class = "form-control"})
         </div>
     </div>

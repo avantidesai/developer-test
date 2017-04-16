@@ -1,0 +1,20 @@
+﻿@model OrangeBricks.Web.Controllers.Property.ViewModels.MyViewingsViewModel
+
+@{
+    ViewBag.Title = "My Viewing Requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Viewing Requests</h2>
+
+<p>Here is a list of your viewing requests:</p>
+
+@foreach (var property in Model.MyViewings)
+{
+    <hr />
+    <p>Property Type - @property.PropertyType</p>
+    <p>Property Address - @property.StreetName</p>
+    <p>Property Description  - @property.Description</p>
+
+    <p>Viewing Request Status - @property.Status</p>
+}

@@ -20,9 +20,11 @@ namespace OrangeBricks.Web.Controllers.Property.Commands
             var offer = new Offer
             {
                 Amount = command.Offer,
-                Status = OfferStatus.Pending,
+                Status = Status.Pending,
                 CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
+                UpdatedAt = DateTime.Now,
+                OfferUserId = command.OfferUserId
+
             };
 
             if (property.Offers == null)
