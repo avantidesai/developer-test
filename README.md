@@ -1,5 +1,15 @@
 #My Observations
 
+The code has a very simplistic architecture. It has essentially separated all features and actions from one another thus giving way to a loosely coupled code. Although I found that we could minimize the Commands and Command Builders to save from repetition, I also thought that this allows for perfect separation of every action. 
+
+My thoughts on scaling and making the app more responsive - 
+1. We could make use of asynchronous request response architecture that allows applications to be more reactive and responsive. 
+2. We could create an API project that serves as a one stop shop for all access to database and its services, this makes the application and codebase more secure and also allows all applications to use the same set of RESTful APIs.
+3. We could make use of AutoMapper that easily transforms the data models to its respective DTOs, thus securing data even further by one level.
+4. The View Models are good in that they are closely placed by their respective controllers.
+5. We could add more levels of security by creating an Identity Server that performs the tasks of Authenticating incoming user requests from all applications in the organization.
+6. We could also give a response based model in the application where the user is notified of the result of the action he performed, which in the current case is not implemented.
+7. 
 
 
 # Purplebricks Developer Test
