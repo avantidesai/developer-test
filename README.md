@@ -1,6 +1,7 @@
 #My Observations
 
-The code has a very simplistic architecture. It has essentially separated all features and actions from one another thus giving way to a loosely coupled code. Although I found that we could minimize the Commands and Command Builders to save from repetition, I also thought that this allows for perfect separation of every action. 
+The code has a very simplistic architecture. It has essentially separated all features and actions from one another thus giving way to a loosely coupled code.  
+I think we could minimize the duplication of Command, ViewModels and CommandBuilders by just using one ViewModel and building them inside their own classes.
 
 My thoughts on scaling and making the app more responsive - 
 1. We could make use of asynchronous request response architecture that allows applications to be more reactive and responsive. 
