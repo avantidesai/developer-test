@@ -14,6 +14,7 @@ My thoughts on scaling and making the app more responsive -
 7. BuyerId was missing in the Offers table, so I have added it there.
 8. Viewing requests has been added as a new feature in the application.
 9. Entity Framework project could be a separate project dedicated to take care of the persistence across all projects.
+10. Unit testing can also be worked on, to allow complete testability.
 
 
 # Purplebricks Developer Test
